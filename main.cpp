@@ -7,7 +7,7 @@
 
 using namespace cv;
 
-
+//C programming
 int main(int argc, char* argv[])
 {
 	IplImage *img = cvLoadImage("input.png");
@@ -24,19 +24,19 @@ int main(int argc, char* argv[])
 	// Draw random color
 	for(int i=0;i<img->height;i++)
 		for(int j=0;j<img->width;j++)
-		{ 
+		{
 			int cl = ilabels[i][j];
 			((uchar *)(img->imageData + i*img->widthStep))[j*img->nChannels + 0] = (color[cl])&255;
 			((uchar *)(img->imageData + i*img->widthStep))[j*img->nChannels + 1] = (color[cl]>>8)&255;
 			((uchar *)(img->imageData + i*img->widthStep))[j*img->nChannels + 2] = (color[cl]>>16)&255;
 		}
 
-	cvNamedWindow("MeanShift",CV_WINDOW_AUTOSIZE);
-	cvShowImage("MeanShift",img);
+	//cvNamedWindow("MeanShift",CV_WINDOW_AUTOSIZE);
+	//cvShowImage("MeanShift",img);
 
-	cvWaitKey();
+	//cvWaitKey();
 
-	cvDestroyWindow("MeanShift");
+	//cvDestroyWindow("MeanShift");
 
 	cvReleaseImage(&img);
 
